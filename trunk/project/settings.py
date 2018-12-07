@@ -85,8 +85,16 @@ WSGI_APPLICATION = 'wsgi.application'
 from . import database
 
 DATABASES = {
-    'default': database.config()
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'list2appdb',
+        'USER': 'userAXU',
+        'PASSWORD': 'vFuqkQsCCDDEHOIw',
+        'HOST': 'localhost',  
+        'PORT': '3306',
+    }
 }
+
 
 
 # Password validation
