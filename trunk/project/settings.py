@@ -90,7 +90,7 @@ DATABASES = {
 		'NAME': 'list2appdb',
         'USER': 'userAXU',
         'PASSWORD': 'vFuqkQsCCDDEHOIw',
-        'HOST': 'localhost',  
+        'HOST': '10.128.24.154',
         'PORT': '3306',
     }
 }
