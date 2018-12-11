@@ -1,0 +1,36 @@
+{% extends "myrestaurants/base.html" %}
+{% load l10n %}
+
+{% block content %}
+
+<div class="row">
+  <h4 class="col"><a href="{% url 'myrestaurants:restaurant_detail' dish.restaurant.id %}">{{ dish.restaurant.name }}</a> > {{ dish.name }}</h4>
+</div>
+
+<div class="row">
+  <div class="col-sm-9">
+    {% if dish.description %}<p>{{ dish.description }}</p>{% endif %}
+    {% if dish.price %}<p>Price € {{ dish.price }}</p>{% endif %}
+  </div>
+  <div class="col-sm-3 mb-5">
+    {% if user == dish.user %}
+      <a class="btn btn-primary" href="{% url 'myrestaurants:dish_edit' dish.restaurant.id dish.id %}">Edit</a>
+    {% endif %}
+  </div>
+</div>
+
+{% if dish.image %}
+  <div class="row">
+    <div class="col">
+        <img class="img-fluid" src="{{ dish.image.url }}"/>
+    </div>
+  </div>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+  <div class="text-muted text-center">
+    Created by {{ dish.user }} on {{ dish.date }}
+  </div>
+{% endblock %}
