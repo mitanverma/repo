@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.utils import timezone
 from django.views.generic import DetailView, ListView, UpdateView
+from . import models
 from models import Restaurant, Dish
 from forms import RestaurantForm, DishForm
 from views import RestaurantCreate, DishCreate, RestaurantDetail, review, LoginRequiredCheckIsOwnerUpdateView
